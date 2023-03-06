@@ -4,12 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script defer src="script.js"></script>
   <link href="output.css" rel="stylesheet">
   <title>Trivia App</title>
 </head>
-<body>
-  <div class="text-[32px] font-bold underline">
-    Hello world!
+<body class="flex w-screen h-screen justify-center items-center px-[20%]">
+  <div class="container flex flex-col justify-center items-center">
+    <div id="score-div" class="flex justify-between w-full hidden pb-10">
+      <div class="text-gray-600">
+        <span id="current-question"></span> / <span id="total-question"></span>
+      </div>
+      <div class="text-gray-600">
+        <span>Timer</span>
+      </div>
+      <div class="text-gray-600">
+        Correct: <span id="correct-score"></span>
+      </div>
+    </div>
+    
+    <div id="question-div" class="hidden">
+      <!-- Question -->
+      <div id="question" class="p-5 text-gray-600"></div>
+      <!-- Answer List -->
+      <div id="answers" class="grid grid-cols gap-2 py-[30px]">
+        
+        <!-- <button class="border-2 rounded-md px-2 border-[#63deb9] bg-[#63deb9] text-white">Correct Answer</button>
+        <button class="border-2 rounded-md px-2 border-[#d53c3c] bg-[#d53c3c] text-white">Wrong Answer</button> -->
+      </div>
+    </div>
+    <div class="flex w-full justify-around">
+      <button id="start" class="p-2 text-gray-600 border-2 rounded-md border-[#5c7aff] p-[10px] text-[32px] hover:bg-[#5c7aff] hover:text-white">Start</button>
+      <button id="next" class="hidden p-2 text-gray-600">Next</button>
+    </div>
   </div>
 </body>
 </html>
