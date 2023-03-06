@@ -5,11 +5,11 @@ const question = document.getElementById('question');
 const answers = document.getElementById('answers');
 const currentQuestion = document.getElementById('current-question');
 const totalQuestion = document.getElementById('total-question');
-const correctScore = document.getElementById('correct-score')
+const _correctScore = document.getElementById('correct-score')
 
 
 
-let correctAnswer = '', correct = asked = 0, total = 10
+let correctAnswer = '', correctScore = asked = 0, total = 10
 
 startBtn.addEventListener('click', startGame)
 
@@ -19,7 +19,7 @@ function startGame() {
   scoreDiv.classList.remove('hidden');
   totalQuestion.textContent = total;
   currentQuestion.textContent = asked;
-  correctScore.textContent = correct;
+  _correctScore.textContent = correctScore;
 
   loadQuestion()
 }
@@ -39,7 +39,31 @@ function setQuestion(data) {
   answerList.splice(Math.floor(Math.random() * (incorrect.length + 1)), 0, correct);
 
   question.innerHTML = `${data.question}`;
+  
   answers.innerHTML = `${answerList.map((answer, index) => `
   <button ${index + 1} class="border-2 rounded-md border-[#4a8fe7] text-gray-600 hover:bg-[#4a8fe7]/25 hover:border-opacity-25"><span>${answer}</span></button>
-  `).join("")}`
+  `
+  ).join("")}`
+
+  selectAnswer()
+}
+
+function selectAnswer() {
+  answers.querySelectorAll('button').forEach((answer) => {
+    answer.addEventListener('click', () => {
+      if(answers.querySelector('.selected')) {
+        const activeAnswer = answers.querySelector('.selected');
+        activeAnswer.classList.remove('selected')
+      }
+      answer.classList.add('selected')
+    })
+  })
+  
+}
+
+function checkAnswer() {
+  if(answers.querySelector('.selected')) {
+    let selectedAnswer = answers.querySelector('.selected span').textContent;
+    console.log(selectedAnswer)
+  }
 }
