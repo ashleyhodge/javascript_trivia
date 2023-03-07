@@ -5,3 +5,12 @@
 *,*::before, ::after {
   box-sizing: border-box;
 }
+.btn {
+  @apply border-2 rounded-md border-[#4a8fe7] text-gray-600 hover:bg-[#4a8fe7]/25 hover:border-opacity-25
+}
+.correct-btn {
+  @apply border-2 rounded-md px-2 border-[#63deb9] bg-[#63deb9] text-white
+}
+.wrong-btn {
+  @apply border-2 rounded-md px-2 border-[#d53c3c] bg-[#d53c3c] text-white
+}

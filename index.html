@@ -10,31 +10,34 @@
 </head>
 <body class="flex w-screen h-screen justify-center items-center px-[20%]">
   <div class="container flex flex-col justify-center items-center">
+    <h1 id="title" class="text-[#5c7aff] text-[60px] font-bold tracking-wider">Trivia Time!</h1>
     <div id="score-div" class="flex justify-between w-full hidden pb-10">
       <div class="text-gray-600">
         <span id="current-question"></span> / <span id="total-question"></span>
       </div>
       <div class="text-gray-600">
-        <span>Timer</span>
+        <span id="time"></span>
       </div>
+      
       <div class="text-gray-600">
         Correct: <span id="correct-score"></span>
       </div>
     </div>
-    
+    <div id="final-con" class="hidden text-center pb-5">
+      <p class="text-[#5c7aff] text-[32px] font-bold"><span id="final-score"></span> % </p>
+      <p class="text-gray-600 text-[25px] font-bold" id="assessment"></p>
+    </div>
     <div id="question-div" class="hidden">
       <!-- Question -->
       <div id="question" class="p-5 text-gray-600"></div>
       <!-- Answer List -->
-      <div id="answers" class="grid grid-cols gap-2 py-[30px]">
-        
-        <!-- <button class="border-2 rounded-md px-2 border-[#63deb9] bg-[#63deb9] text-white">Correct Answer</button>
-        <button class="border-2 rounded-md px-2 border-[#d53c3c] bg-[#d53c3c] text-white">Wrong Answer</button> -->
-      </div>
+      <div id="answers" class="grid grid-cols gap-2 py-[30px]"></div>
     </div>
     <div class="flex w-full justify-around">
       <button id="start" class="p-2 text-gray-600 border-2 rounded-md border-[#5c7aff] p-[10px] text-[32px] hover:bg-[#5c7aff] hover:text-white">Start</button>
       <button id="next" class="hidden p-2 text-gray-600">Next</button>
+      <button id="end" class="hidden p-2 text-gray-600">End Game</button>
+      <button id="play-again" class="hidden p-2 text-gray-600 border-2 rounded-md border-[#5c7aff] p-[10px] text-[32px] hover:bg-[#5c7aff] hover:text-white">Play Again</button>
     </div>
   </div>
 </body>
